@@ -1,7 +1,10 @@
 import camelot
 
 tables = camelot.read_pdf('avinem.pdf', pages='3',flavor='stream',table_areas=['0,800,800,0'])
+
 #tables.export('avinem.csv', f='csv', compress=True) # json, excel, html, sqlite
-tables[0].parsing_report
-tables[0].to_csv('avinem.csv') # to_json, to_excel, to_html, to_sqlite
-tables[0].df # get a pandas DataFrame!
+
+for t in range(len(tables)):
+    tables[t].to_csv('TB2018.csv', mode='a') # to_json, to_excel, to_html, to_sqlite
+    #tables[t].parsing_report  
+    #tables[t].df # get a pandas DataFrame!
