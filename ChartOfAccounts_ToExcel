@@ -1,6 +1,6 @@
 import camelot, pandas as pd
 
-tables = camelot.read_pdf('Alomit_Chart.pdf', pages='1-end',flavor='stream',table_areas=['0,800,800,0'])
+tables = camelot.read_pdf('Alomit_Chart.pdf', pages='1-end',flavor='stream',table_areas=['0,800,800,0']) # flavor='lattice' if lines between cells, else 'stream' 
 
 df_list = []
 
