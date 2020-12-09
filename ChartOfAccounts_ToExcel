@@ -4,7 +4,7 @@ tables = camelot.read_pdf('Alomit_Chart.pdf', pages='1-end',flavor='stream',tabl
 
 df_list = []
 
-for table_num in range (24):
+for table_num in range (len(tables)):
     df_list.append(tables[table_num].df)
 
 df = pd.concat(df_list)
