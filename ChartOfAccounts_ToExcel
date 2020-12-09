@@ -1,9 +1,9 @@
 import camelot, pandas as pd
 
-tables = camelot.read_pdf('Alomit_Chart.pdf', pages='1-end',flavor='stream',table_areas=['0,800,800,0']) # flavor='lattice' if lines between cells, else 'stream' 
+tables = camelot.read_pdf('Alomit_Chart.pdf', pages='1-end',flavor='stream') 
+# flavor='lattice' if lines between cells, else 'stream' / table_areas=['0,800,800,0'] to specify areas
 
 df_list = []
-
 for table_num in range (len(tables)):
     df_list.append(tables[table_num].df)
 
