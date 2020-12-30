@@ -1,4 +1,4 @@
-import camelot, pandas as pd
+import camelot, pandas as pd, os
 
 directory = r''
 file_name = r''
