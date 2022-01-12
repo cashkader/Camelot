@@ -1,0 +1,17 @@
+import camelot, pandas as pd, os
+
+directory = r''
+file_name = r''
+os.chdir(directory)
+
+tables = camelot.read_pdf(file_name+'.pdf', pages='1-end',flavor='stream')
+# flavor='lattice' if lines between cells, else 'stream' / table_areas=['0,800,800,0'] to specify areas/ strip_text='\n'/line_scale=30
+# camelot.plot(tables[0], kind='text')
+
+df_list = []
+for table_num in range (len(tables)):
+    df_list.append(tables[table_num].df)
+
+df = pd.concat(df_list)
+
+df.to_excel(file_name+'.xlsx', encoding='utf-8', index=False, header=False)
